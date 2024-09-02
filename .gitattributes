@@ -1,0 +1,2 @@
+challenge_set.csv filter=lfs diff=lfs merge=lfs -text
+submission_set.csv filter=lfs diff=lfs merge=lfs -text
