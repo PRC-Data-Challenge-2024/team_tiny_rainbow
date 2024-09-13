@@ -1,0 +1,9 @@
+brew install minio/stable/mc
+
+mc alias set dc24 https://s3.opensky-network.org/ ZG58zJvKhts2bkOX eU95azmBpK82kg96mE0TNzsWov3OvP2d
+
+mc cp ./Downloads/001.csv dc24/submissions/team_tiny_rainbow_v0_7ec66710-1eb8-478e-8976-584c090b6373.csv
+mc cp ./Downloads/002.csv dc24/submissions/team_tiny_rainbow_v1_7ec66710-1eb8-478e-8976-584c090b6373.csv
+mc cp ./mlp.csv dc24/submissions/team_tiny_rainbow_v2_7ec66710-1eb8-478e-8976-584c090b6373.csv
+mc cp ./Downloads/003.csv dc24/submissions/team_tiny_rainbow_v3_7ec66710-1eb8-478e-8976-584c090b6373.csv
+mc cp ./Downloads/submission_20240906_192052.csv dc24/submissions/team_tiny_rainbow_v4_7ec66710-1eb8-478e-8976-584c090b6373.csv
