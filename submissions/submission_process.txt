@@ -1,3 +1,0 @@
-brew install minio/stable/mc
-
-mc alias set dc24 https://s3.opensky-network.org/ ZG58zJvKhts2bkOX eU95azmBpK82kg96mE0TNzsWov3OvP2d
