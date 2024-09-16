@@ -7,9 +7,11 @@ from sklearn.metrics import root_mean_squared_error
 import optuna
 
 # Load the dataset after the exploratory data analysis
-challenge_set_updated = pd.read_csv("./data/challenge_set_updated_v7.csv")
+# challenge_set_updated = pd.read_csv("./data/challenge_set_updated_v7.csv")
+challenge_set_updated = pd.read_csv("./data/challenge_set_updated_v8.csv")
 submission_set = pd.read_csv("./data/submission_set.csv")
-submission_set_updated = pd.read_csv("./data/submission_set_updated_v7.csv")
+# submission_set_updated = pd.read_csv("./data/submission_set_updated_v7.csv")
+submission_set_updated = pd.read_csv("./data/submission_set_updated_v8.csv")
 
 # If necessary change this part to test the model before the training process
 df = challenge_set_updated.iloc[:,:]
@@ -44,7 +46,9 @@ cat_names = ['aircraft_type',
              'Manufacturer',
              'Model_FAA',
              'Physical_Class_Engine',
-             'FAA_Weight']
+             'FAA_Weight',
+             'adep_geo_cluster',
+             'ades_geo_cluster']
              
 X = df.drop('tow', axis=1)
 y = df.tow
@@ -57,7 +61,7 @@ val_pool = Pool(X_val, y_val, cat_features=cat_names)
 def objective(trial):
     # Taken from: https://deepnote.com/app/svpino/Tuning-Hyperparameters-with-Optuna-ea1a123d-8d2f-4e20-8f22-95f07470d557
     params = {
-        'learning_rate' : trial.suggest_float('learning_rate', 0.01, 1),
+        'learning_rate' : trial.suggest_float('learning_rate', 0.01, 0.5),
         'reg_lambda': trial.suggest_float('reg_lambda', 1e-5, 100),
         # 'subsample': trial.suggest_float('subsample', 0, 1),
         'random_strength': trial.suggest_float('random_strength', 10, 50),
@@ -67,7 +71,7 @@ def objective(trial):
     }
     
     model = CatBoostRegressor(
-        iterations=5000,
+        iterations=10000,
         eval_metric=metrics.RMSE(),
         random_seed=42,
         verbose=False,
@@ -90,7 +94,7 @@ def objective(trial):
     
 study = optuna.create_study(study_name='catboost_tunning', storage='sqlite:///catboost.db', 
 			    direction='minimize', load_if_exists=True)
-study.optimize(objective, n_trials=50)
+study.optimize(objective, n_trials=100)
 
 # Display the best hyperparameters found
 print(f"Best trial: {study.best_trial.params}")
@@ -98,7 +102,7 @@ print(f"Best trial: {study.best_trial.params}")
 # Train the final model with the best parameters
 best_params = study.best_trial.params
 best_model = CatBoostRegressor(
-    iterations=5000,
+    iterations=10000,
     eval_metric=metrics.RMSE(),
     random_seed=42,
     logging_level='Silent',
