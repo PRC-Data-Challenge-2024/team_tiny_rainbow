@@ -1,0 +1,10 @@
+R2: 0.9960614535577612
+RMSE: 3320.3311613457286
+Best Parameters:
+  learning_rate: 0.024467522260013797
+  max_depth: 12
+  min_child_weight: 4
+  colsample_bytree: 0.5198446658053548
+  reg_alpha: 0.010584778625777792
+  reg_lambda: 0.009381921153532946
+  n_estimators: 14257
