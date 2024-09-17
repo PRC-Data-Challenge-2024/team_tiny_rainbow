@@ -145,4 +145,4 @@ class SAINT(nn.Module):
         x = self.transformer(x_categ, x_cont)
         cat_outs = self.mlp1(x[:,:self.num_categories,:])
         con_outs = self.mlp2(x[:,self.num_categories:,:])
-        return cat_outs, con_outs 
+        return cat_outs, [F.sigmoid(con_out) for con_out in con_outs]
