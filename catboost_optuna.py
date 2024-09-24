@@ -23,7 +23,8 @@ y = df['tow']
 
 df.head()
 
-to_drop = ['offblock_to_arrival_duration', 'normalized_taxi_ratio', 'MALW_kg', 'wind_distance_ENR', 'wind_distance_ARR_100', 'track_variation_ENR', 'arrival_minute', 'offblock_minute', 'average_humidity_ARR_100', 'adep', 'ades', 'average_temperature_ARR_100', 'average_airspeed_ARR_100', 'groundspeed_ARR_100', 'flown_distance_ARR_100', 'average_airspeed_ENR', 'track_variation_ARR_100', 'average_airspeed_DEP_100', 'wind_distance_DEP_100', 'average_vertical_rate_ARR_100', 'Num_Engines', 'is_offblock_weekend', 'track_variation_DEP_100', 'specific_energy_ENR', 'taxi_ratio', 'groundspeed_ENR', 'average_humidity_DEP_100']
+to_drop = ['offblock_to_arrival_duration', 'normalized_taxi_ratio', 'MALW_kg', 'wind_distance_ARR_100', 'average_airspeed_ARR_100', 'track_variation_ARR_100', 'is_offblock_weekend', 'Num_Engines', 'flown_distance_ARR_100', 'average_humidity_ARR_100', 'average_temperature_ARR_100', 'wind_distance_DEP_100', 'arrival_minute', 'track_variation_ENR', 'groundspeed_ARR_100', 'average_vertical_rate_ARR_100', 'taxiout_time', 'track_variation_DEP_100', 'average_airspeed_DEP_100', 'offblock_minute', 'average_airspeed_ENR', 'specific_energy_ENR',
+'taxi_ratio', 'average_humidity_DEP_100', 'specific_energy_ARR_100', 'is_offblock_rush_hour', 'wind_distance_ENR', 'groundspeed_ENR', 'altitude_difference', 'average_vertical_rate_ENR', 'bearing', 'Altitude_ades']
 
 cat_names = ['adep',
              'ades',
@@ -71,7 +72,8 @@ def objective(trial):
     # https://deepnote.com/app/svpino/Tuning-Hyperparameters-with-Optuna-ea1a123d-8d2f-4e20-8f22-95f07470d557
     # https://forecastegy.com/posts/catboost-hyperparameter-tuning-guide-with-optuna/
     params = {
-        'learning_rate' : trial.suggest_float('learning_rate', 0.01, 0.1, log=True),
+        #'learning_rate' : trial.suggest_float('learning_rate', 0.01, 0.1, log=True),
+        'learning_rate' : 0.1,
         'reg_lambda': trial.suggest_float('reg_lambda', 1e-5, 100, log=True),
         'subsample': trial.suggest_float('subsample', 0.05, 1),
         'random_strength': trial.suggest_float('random_strength', 10, 50),
@@ -82,7 +84,7 @@ def objective(trial):
     }
     
     model = CatBoostRegressor(
-        iterations=10000,
+        iterations=5000,
         eval_metric=metrics.RMSE(),
         random_seed=42,
         verbose=False,
