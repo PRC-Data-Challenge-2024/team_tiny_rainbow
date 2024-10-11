@@ -1,2 +1,6 @@
 data/
 submissions/
+models/
+catboost_info/
+logs/
+extra_data/
