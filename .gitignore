@@ -5,3 +5,4 @@ catboost_info/
 logs/
 extra_data/
 output_data/
+LightGBM/
