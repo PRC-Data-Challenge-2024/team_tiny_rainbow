@@ -1,0 +1,24 @@
+Flight List:
+flight_id: A unique identifier assigned to each flight.
+date: The date when the flight took place.
+callsign: The encrypted callsign associated with the flight.
+adep: The code of the departure airport.
+name_adep: The name of the departure airport.
+country_code_adep: The country code of the departure airport.
+ades: The code of the destination airport.
+name_ades: The name of the destination airport.
+country_code_ades: The country code of the destination airport.
+actual_offblock_time: The time when the aircraft started to move from its parking position.
+arrival_time: The time of arrival at the destination airport.
+aircraft_type: The type of aircraft used for the flight.
+wtc: The wake turbulence category of the aircraft.
+airline: The encrypted identifier of the airline operating the flight.
+flight_duration: The duration of the flight in minutes.
+taxiout_time: The time spent taxiing out from the departure airport.
+flown_distance: The distance flown during the flight in kilometers.
+tow: The target variable representing the actual TakeOff Weight (TOW) of the aircraft.
+
+Additional Aircraft:
+
+
+Trajectory:
