@@ -4,9 +4,9 @@ from catboost import CatBoostRegressor, Pool, metrics, cv
 import optuna
 
 # Load the dataset after the exploratory data analysis
-challenge_set_updated = pd.read_csv("../data/challenge_set_updated_v20.csv")
-submission_set = pd.read_csv("../data/final_submission_set_v20.csv")
-submission_set_updated = pd.read_csv("../data/submission_set_updated.csv")
+challenge_set_updated = pd.read_csv("data/challenge_set_updated_v20.csv")
+submission_set = pd.read_csv("data/final_submission_set.csv")
+submission_set_updated = pd.read_csv("data/submission_set_updated_v20.csv")
 
 dataset = pd.concat([challenge_set_updated, submission_set_updated], axis=0)
 
