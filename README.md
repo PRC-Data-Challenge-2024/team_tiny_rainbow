@@ -34,13 +34,11 @@ The trajectory data processing was developed in R, while the feature engineering
 
 # How to Run
 
-## Exploratory Data Analysis
-
-## CatBoost
+## R Dependencies
 
 ## Python Dependencies
 
-The code was developed and tested under Python 3.12. Moreover, the following Python dependencies are needed:
+The code was developed and tested under Python 3.12. The following Python dependencies are needed:
 - `numpy`
 - `pandas`
 - `matplotlib`
@@ -52,6 +50,14 @@ The code was developed and tested under Python 3.12. Moreover, the following Pyt
 - `fastai`
 
 Furthermore, for convenience, a `requirements.txt` is provided.
+
+## Exploratory Data Analysis
+
+## CatBoost
+
+## XGBoost
+
+## LightGBM
 
 # Team
 
