@@ -35,6 +35,8 @@ The trajectory data processing was developed in R, while the feature engineering
 2. **Feature engineering**: uses the file generated in the previous step and executes feature engineering by adding complementary data and deriving new features. This generates an augmented dataset composed of `challenge_set_updated.csv` and `submission_set_updated.csv`.
 3. **Model training and inference**: uses the augmented dataset to train a particular predictive model and obtain the estimated ATOWs for the submission set.
 
+The full list of features after the feature engineering step can be seen at `feature_description.txt`.
+
 # How to Run
 
 To execute the code, you initially need to download the datasets from:

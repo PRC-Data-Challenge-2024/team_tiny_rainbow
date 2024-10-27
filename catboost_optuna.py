@@ -1,9 +1,6 @@
 from sklearn.model_selection import train_test_split
 import pandas as pd
-import numpy as np
 from catboost import CatBoostRegressor, Pool, metrics, cv
-from sklearn.metrics import r2_score, mean_squared_error
-from sklearn.metrics import root_mean_squared_error
 import optuna
 
 # Load the dataset after the exploratory data analysis
@@ -129,7 +126,7 @@ print(f"Best trial: {study.best_trial.params}")
 # Train the final model with the best parameters
 best_params = study.best_trial.params
 best_model = CatBoostRegressor(
-    iterations=10000,
+    iterations=20000,
     eval_metric=metrics.RMSE(),
     random_seed=42,
     logging_level='Silent',
@@ -137,7 +134,7 @@ best_model = CatBoostRegressor(
     task_type='GPU', # training on GPU
     use_best_model=True,
     od_type='Iter',
-    od_wait=20,
+    od_wait=50,
     **best_params,
 )
 
