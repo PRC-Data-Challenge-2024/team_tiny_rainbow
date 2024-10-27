@@ -118,6 +118,12 @@ The predictive model based on XGBoost involves the following files:
 
 ## LightGBM
 
+Before running any of the LightGBM files, `eda-v20.ipynb` should be executed to generate the feature-engineered dataset. This dataset differs from others by including dummy variables, which helps LightGBM achieve better results by more effectively capturing categorical distinctions.
+
+The predictive model based on LightGBM involves the following files:
+- `lightgbm.ipynb`: This is the primary notebook for training and inference using the LightGBM model. It trains the model on the challenge set and generates the estimated ATOWs for the submission set.
+- `lightgbm-optuna.py`: Uses Optuna to fine-tune XGBoost's hyperparameters, enhancing the model's accuracy and efficiency.
+
 ## Neural Networks
 
 ## Ensemble
