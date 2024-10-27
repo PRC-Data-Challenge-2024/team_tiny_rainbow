@@ -30,34 +30,70 @@ The challenge initially provided "flight and trajectory" data for each flight. O
 - Neural networks (FastAI's Tabular Learner and SAINT).
 - An ensemble of the previous models.
 
-The trajectory data processing was developed in R, while the feature engineering and the ML models were implemented in Python. To communicate between the different modules of the code, we use `.csv` files.
+The trajectory data processing was developed in R, while the feature engineering and the ML models were implemented in Python. To communicate between the different modules of the code, we use `.csv` files. In general, our code's pipeline follows these steps:
+1. **Trajectory data processing:** process the challenge's data (flight and trajectory data) and generates `trajectories_set.csv` with features for each flight.
+2. **Feature engineering**: uses the file generated in the previous step and executes feature engineering by adding complementary data and deriving new features. This generates an augmented dataset composed of `challenge_set_updated.csv` and `submission_set_updated.csv`.
+3. **Model training and inference**: uses the augmented dataset to train a particular predictive model and obtain the estimated ATOWs for the submission set.
 
 # How to Run
+
+To execute the code, you initially need to download the datasets from:
+https://drive.google.com/drive/folders/1PmEJ880V-0XKuOr-6kcoSqSErOnRBZ88?usp=sharing
+
+We could not keep these files on GitHub due to space limitations.
+
+You should run the scripts/notebooks on the following order:
+1. Trajectory Data Processing.
+2. Exploratory Data Analysis.
+3. Model Training (CatBoost, XGBoost, LightGBM, Neural Networks, or Ensemble).
+
+
 
 ## R Dependencies
 
 ## Python Dependencies
 
 The code was developed and tested under Python 3.12. The following Python dependencies are needed:
+- `jupyter`
 - `numpy`
 - `pandas`
 - `matplotlib`
 - `seaborn`
+- `tqdm`
 - `scikit-learn`
 - `catboost`
 - `xgboost`
 - `lightgbm`
 - `fastai`
+- `optuna`
 
-Furthermore, for convenience, a `requirements.txt` is provided.
+Execute the following command to install all dependencies:
+```
+pip3 install jupyter numpy pandas matplotlib seaborn tqdm scikit-learn catboost xgboost lightgbm fastai optuna
+```
+
+Furthermore, a `requirements.txt` is also provided.
+
+## Trajectory Data Processing
 
 ## Exploratory Data Analysis
 
 ## CatBoost
 
+Before running any of CatBoost's files, `eda-v20.ipynb` needs to be run in order to generate the feature engineered dataset.
+
+The predictive model based on CatBoost involves the following files:
+- `catboost-v20.ipynb`: this is the main notebook for training and inference of the model based on CatBoost. It trains the model on the challenge set and generates the estimated ATOWs on the submission set.
+- `catboost-select-v20.ipynb`: uses the method `select_features()` from CatBoost to eliminate features that hurt the model's performance.
+- `catboost-optuna.py`: uses Optuna to optimize the CatBoost's hyperparameters.
+
 ## XGBoost
 
 ## LightGBM
+
+## Neural Networks
+
+## Ensemble
 
 # Team
 
