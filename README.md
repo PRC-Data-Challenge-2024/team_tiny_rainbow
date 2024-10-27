@@ -110,10 +110,10 @@ The predictive model based on CatBoost involves the following files:
 
 ## XGBoost
 
-Before running any of the XGBoost files, `eda-xgboost-v20.ipynb` should be executed to generate the feature-engineered dataset. This dataset differs from others by including dummy variables, which helps XGBoost achieve better results by more effectively capturing categorical distinctions.
+Before running any of the XGBoost files, `xgboost_feature-engineering.ipynb` should be executed to generate the feature-engineered dataset. This dataset differs from others by including dummy variables, which helps XGBoost achieve better results by more effectively capturing categorical distinctions.
 
 The predictive model based on XGBoost involves the following files:
-- `xgboost-v20.ipynb`: This is the primary notebook for training and inference using the XGBoost model. It trains the model on the challenge set and generates the estimated ATOWs for the submission set.
+- `xgboost.ipynb`: This is the primary notebook for training and inference using the XGBoost model. It trains the model on the challenge set and generates the estimated ATOWs for the submission set.
 - `xgboost-optuna.py`: Uses Optuna to fine-tune XGBoost's hyperparameters, enhancing the model's accuracy and efficiency.
 
 ## LightGBM
