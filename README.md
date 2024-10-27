@@ -76,10 +76,11 @@ The code was developed and tested under Python 3.12. The following Python depend
 - `lightgbm`
 - `fastai`
 - `optuna`
+- `qpsolvers[proxqp]`
 
 Execute the following command to install all dependencies:
 ```
-pip3 install jupyter numpy pandas matplotlib seaborn tqdm scikit-learn catboost xgboost lightgbm fastai optuna
+pip3 install jupyter numpy pandas matplotlib seaborn tqdm scikit-learn catboost xgboost lightgbm fastai optuna qpsolvers[proxqp]
 ```
 
 Furthermore, a `requirements.txt` is also provided.
