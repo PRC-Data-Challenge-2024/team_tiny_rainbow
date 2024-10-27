@@ -4,59 +4,113 @@ ades: Destination airport.
 aircraft_type: Specific type or model of the aircraft.
 wtc: Wake turbulence category.
 airline: Operating airline.
-taxiout_time: Time spent taxiing to takeoff.
+taxiout_time: Time spent taxiing before takeoff.
 flown_distance: Total distance flown.
-track_variation_ARR_100: Track variation on arrival.
-track_variation_DEP_40: Track variation on departure.
-track_variation_ENR: Track variation en-route.
-average_vertical_rate_ARR_100: Average vertical rate on arrival.
-average_vertical_rate_DEP_40: Average vertical rate on departure.
-average_vertical_rate_ENR: Average vertical rate en-route.
-average_airspeed_ARR_100: Average airspeed on arrival.
-average_airspeed_DEP_40: Average airspeed on departure.
-average_airspeed_ENR: Average airspeed en-route.
-groundspeed_ARR_100: Average groundspeed on arrival.
-groundspeed_DEP_40: Average groundspeed on departure.
-groundspeed_ENR: Average groundspeed en-route.
-wind_distance_ARR_100: Distance influenced by wind on arrival.
-wind_distance_DEP_40: Distance influenced by wind on departure.
-wind_distance_ENR: Distance influenced by wind en-route.
-average_temperature_ARR_100: Average temperature on arrival.
-average_temperature_DEP_40: Average temperature on departure.
-average_temperature_ENR: Average temperature en-route.
-average_humidity_ARR_100: Average humidity on arrival.
-average_humidity_DEP_40: Average humidity on departure.
-average_humidity_ENR: Average humidity en-route.
-specific_energy_ARR_100: Specific energy on arrival.
-specific_energy_DEP_40: Specific energy on departure.
-specific_energy_ENR: Specific energy en-route.
-flown_distance_ARR_100: Flown distance on arrival.
-flown_distance_DEP_40: Flown distance on departure.
-flown_distance_ENR: Flown distance en-route.
-average_altitude_ARR_100: Average altitude on arrival.
-average_altitude_DEP_40: Average altitude on departure.
-average_altitude_ENR: Average altitude en-route.
-max_altitude_ARR_100: Maximum altitude on arrival.
-max_altitude_DEP_40: Maximum altitude on departure.
-max_altitude_ENR: Maximum altitude en-route.
-cruise_altitude_ENR: Cruise altitude en-route.
-specific_energy: Total specific energy.
-tas_10NM: True airspeed 10 nautical miles from a point.
-groundspeed_10NM: Groundspeed 10 nautical miles from a point.
-first_adep_height: Initial altitude at the departure airport.
-vlof_tas: True airspeed at liftoff.
-sqrd_vlof_tas: Squared true airspeed at liftoff.
-vlof_groundspeed: Groundspeed at liftoff.
-tas_1 to tas_10: True airspeed at specific measurement points.
-sqrd_tas_1 to sqrd_tas_10: Squared true airspeed at specific measurement points.
-temperature_1 to temperature_10: Temperature at specific measurement points.
-adep_height_1 to adep_height_10: Altitude at the departure airport at different points.
-altitude_1 to altitude_10: Altitude at specific points during the flight.
-specific_energy_1 to specific_energy_10: Specific energy at specific points.
-kpi17_distance: Distance related to KPI 17.
-flown_distance_kpi17: Flown distance related to KPI 17.
-kpi17_time: Time related to KPI 17.
-transit_time_kpi17: Transit time related to KPI 17.
+track_variation_ARR_100: Track variation within 100 NM of arrival airport, in degrees.
+track_variation_DEP_40: Track variation within 40 NM of departure airport, in degrees.
+track_variation_ENR: Track variation during en-route phase, in degrees.
+average_vertical_rate_ARR_100: Average vertical speed within 100 NM of arrival airport, in ft/min.
+average_vertical_rate_DEP_40: Average vertical speed within 40 NM of departure airport, in ft/min.
+average_vertical_rate_ENR: Average vertical speed during en-route phase, in ft/min.
+average_airspeed_ARR_100: Average true airspeed within 100 NM of arrival airport, in m/s.
+average_airspeed_DEP_40: Average true airspeed within 40 NM of departure airport, in m/s.
+average_airspeed_ENR: Average true airspeed during en-route phase, in m/s.
+groundspeed_ARR_100: Average ground speed within 100 NM of arrival airport, in knots.
+groundspeed_DEP_40: Average ground speed within 40 NM of departure airport, in knots.
+groundspeed_ENR: Average ground speed during en-route phase, in knots.
+wind_distance_ARR_100: Sum of tailwind/headwind speed times time within 100 NM of arrival airport, in meters.
+wind_distance_DEP_40: Sum of tailwind/headwind speed times time within 40 NM of departure airport, in meters.
+wind_distance_ENR: Sum of tailwind/headwind speed times time during en-route phase, in meters.
+average_temperature_ARR_100: Average temperature within 100 NM of arrival airport, in K.
+average_temperature_DEP_40: Average temperature within 40 NM of departure airport, in K.
+average_temperature_ENR: Average temperature during en-route phase, in K.
+average_humidity_ARR_100: Average humidity within 100 NM of arrival airport, in g/kg.
+average_humidity_DEP_40: Average humidity within 40 NM of departure airport, in g/kg.
+average_humidity_ENR: Average humidity during en-route phase, in g/kg.
+specific_energy_ARR_100: Specific energy at last point within 100 NM of arrival airport (V² + gh).
+specific_energy_DEP_40: Specific energy at last point within 40 NM of departure airport (V² + gh).
+specific_energy_ENR: Specific energy at last point during en-route phase (V² + gh).
+flown_distance_ARR_100: Flown distance within 100 NM of arrival airport, in nautical miles.
+flown_distance_DEP_40: Flown distance within 40 NM of departure airport, in nautical miles.
+flown_distance_ENR: Flown distance during en-route phase, in nautical miles.
+average_altitude_ARR_100: Average altitude within 100 NM of arrival airport, in feet.
+average_altitude_DEP_40: Average altitude within 40 NM of departure airport, in feet.
+average_altitude_ENR: Average altitude during en-route phase, in feet.
+max_altitude_ARR_100: Maximum altitude within 100 NM of arrival airport, in feet.
+max_altitude_DEP_40: Maximum altitude within 40 NM of departure airport, in feet.
+max_altitude_ENR: Maximum altitude during en-route phase, in feet.
+cruise_altitude_ENR: 99th percentile of altitude during en-route phase, in feet.
+specific_energy: Specific energy at 10 NM flown (V² + gh).
+tas_10NM: True airspeed at 10 NM flown, in m/s.
+groundspeed_10NM: Ground speed at 10 NM flown, in knots.
+first_adep_height: Height relative to departure airport at first airborne point, in feet.
+vlof_tas: True airspeed at liftoff, in m/s.
+sqrd_vlof_tas: True airspeed squared at liftoff, in m²/s².
+vlof_groundspeed: Ground speed at liftoff, in knots.
+tas_1: 1st airborne observation of true airspeed, in m/s.
+tas_2: 2nd airborne observation of true airspeed, in m/s.
+tas_3: 3rd airborne observation of true airspeed, in m/s.
+tas_4: 4th airborne observation of true airspeed, in m/s.
+tas_5: 5th airborne observation of true airspeed, in m/s.
+tas_6: 6th airborne observation of true airspeed, in m/s.
+tas_7: 7th airborne observation of true airspeed, in m/s.
+tas_8: 8th airborne observation of true airspeed, in m/s.
+tas_9: 9th airborne observation of true airspeed, in m/s.
+tas_10: 10th airborne observation of true airspeed, in m/s.
+sqrd_tas_1: 1st airborne observation of true airspeed squared, in m²/s².
+sqrd_tas_2: 2nd airborne observation of true airspeed squared, in m²/s².
+sqrd_tas_3: 3rd airborne observation of true airspeed squared, in m²/s².
+sqrd_tas_4: 4th airborne observation of true airspeed squared, in m²/s².
+sqrd_tas_5: 5th airborne observation of true airspeed squared, in m²/s².
+sqrd_tas_6: 6th airborne observation of true airspeed squared, in m²/s².
+sqrd_tas_7: 7th airborne observation of true airspeed squared, in m²/s².
+sqrd_tas_8: 8th airborne observation of true airspeed squared, in m²/s².
+sqrd_tas_9: 9th airborne observation of true airspeed squared, in m²/s².
+sqrd_tas_10: 10th airborne observation of true airspeed squared, in m²/s².
+temperature_1: 1st airborne observation of temperature, in K.
+temperature_2: 2nd airborne observation of temperature, in K.
+temperature_3: 3rd airborne observation of temperature, in K.
+temperature_4: 4th airborne observation of temperature, in K.
+temperature_5: 5th airborne observation of temperature, in K.
+temperature_6: 6th airborne observation of temperature, in K.
+temperature_7: 7th airborne observation of temperature, in K.
+temperature_8: 8th airborne observation of temperature, in K.
+temperature_9: 9th airborne observation of temperature, in K.
+temperature_10: 10th airborne observation of temperature, in K.
+adep_height_1: 1st airborne observation of height relative to departure airport, in feet.
+adep_height_2: 2nd airborne observation of height relative to departure airport, in feet.
+adep_height_3: 3rd airborne observation of height relative to departure airport, in feet.
+adep_height_4: 4th airborne observation of height relative to departure airport, in feet.
+adep_height_5: 5th airborne observation of height relative to departure airport, in feet.
+adep_height_6: 6th airborne observation of height relative to departure airport, in feet.
+adep_height_7: 7th airborne observation of height relative to departure airport, in feet.
+adep_height_8: 8th airborne observation of height relative to departure airport, in feet.
+adep_height_9: 9th airborne observation of height relative to departure airport, in feet.
+adep_height_10: 10th airborne observation of height relative to departure airport, in feet.
+altitude_1: 1st airborne observation of altitude, in feet.
+altitude_2: 2nd airborne observation of altitude, in feet.
+altitude_3: 3rd airborne observation of altitude, in feet.
+altitude_4: 4th airborne observation of altitude, in feet.
+altitude_5: 5th airborne observation of altitude, in feet.
+altitude_6: 6th airborne observation of altitude, in feet.
+altitude_7: 7th airborne observation of altitude, in feet.
+altitude_8: 8th airborne observation of altitude, in feet.
+altitude_9: 9th airborne observation of altitude, in feet.
+altitude_10: 10th airborne observation of altitude, in feet.
+specific_energy_1: 1st airborne observation of specific energy (V² + gh).
+specific_energy_2: 2nd airborne observation of specific energy (V² + gh).
+specific_energy_3: 3rd airborne observation of specific energy (V² + gh).
+specific_energy_4: 4th airborne observation of specific energy (V² + gh).
+specific_energy_5: 5th airborne observation of specific energy (V² + gh).
+specific_energy_6: 6th airborne observation of specific energy (V² + gh).
+specific_energy_7: 7th airborne observation of specific energy (V² + gh).
+specific_energy_8: 8th airborne observation of specific energy (V² + gh).
+specific_energy_9: 9th airborne observation of specific energy (V² + gh).
+specific_energy_10: 10th airborne observation of specific energy (V² + gh).
+kpi17_distance: Distance in level flight from takeoff to top of climb, in meters.
+flown_distance_kpi17: Total climb distance from takeoff to top of climb, in meters.
+kpi17_time: Time in level flight from takeoff to top of climb, in seconds.
+transit_time_kpi17: Total climb time from takeoff to top of climb, in seconds.
 offblock_hour: Hour of gate departure.
 offblock_minute: Minute of gate departure.
 offblock_day_of_week: Day of the week for gate departure.
@@ -66,17 +120,17 @@ offblock_week_of_year: Week of the year for gate departure.
 offblock_quarter: Quarter of the year for gate departure.
 offblock_year: Year of gate departure.
 offblock_season: Season of gate departure.
-offblock_weekday_name: Name of the weekday for gate departure.
+offblock_weekday_name: Weekday name of gate departure.
 arrival_hour: Hour of arrival.
 arrival_minute: Minute of arrival.
 arrival_day_of_week: Day of the week of arrival.
 arrival_day_of_year: Day of the year of arrival.
 arrival_month: Month of arrival.
-arrival_week_of_year: Week of the year for arrival.
-arrival_quarter: Quarter of the year for arrival.
+arrival_week_of_year: Week of the year of arrival.
+arrival_quarter: Quarter of the year of arrival.
 arrival_year: Year of arrival.
 arrival_season: Season of arrival.
-arrival_weekday_name: Name of the weekday for arrival.
+arrival_weekday_name: Weekday name of arrival.
 offblock_to_arrival_duration: Duration from gate departure to arrival.
 is_offblock_weekend: Indicates if gate departure is on a weekend.
 is_offblock_rush_hour: Indicates if gate departure is during rush hour.
@@ -89,30 +143,30 @@ normalized_taxi_ratio: Normalized ratio of taxi time.
 flight_duration_category: Category of flight duration.
 speed_per_distance: Speed per unit distance.
 cumulative_avg_speed: Cumulative average speed.
-avg_speed_ENR: Average speed en-route.
-ENR_distance_ratio: Ratio of en-route distance.
-flight_time_excl_taxi: Flight time excluding taxi.
+avg_speed_ENR: Average speed during en-route phase.
+ENR_distance_ratio: Ratio of en-route distance to total distance.
+flight_time_excl_taxi: Flight time excluding taxi time.
 adep_region: Region of the departure airport.
 ades_region: Region of the destination airport.
-same_country_flight: Whether the flight is domestic.
-same_region_flight: Whether the flight is within the same region.
+same_country_flight: Indicates if the flight is within the same country.
+same_region_flight: Indicates if the flight is within the same region.
 flight_direction: Direction of the flight.
-is_intercontinental: Whether the flight is intercontinental.
+is_intercontinental: Indicates if the flight is intercontinental.
 airspeed_specific_energy_ARR: Airspeed-related specific energy on arrival.
 airspeed_specific_energy_DEP: Airspeed-related specific energy on departure.
-airspeed_specific_energy_ENR: Airspeed-related specific energy en-route.
-groundspeed_flown_distance_ARR: Flown distance related to groundspeed on arrival.
-groundspeed_flown_distance_DEP: Flown distance related to groundspeed on departure.
-groundspeed_flown_distance_ENR: Flown distance related to groundspeed en-route.
+airspeed_specific_energy_ENR: Airspeed-related specific energy during en-route phase.
+groundspeed_flown_distance_ARR: Flown distance related to ground speed on arrival.
+groundspeed_flown_distance_DEP: Flown distance related to ground speed on departure.
+groundspeed_flown_distance_ENR: Flown distance related to ground speed during en-route phase.
 humidity_temperature_ARR: Humidity-temperature relationship on arrival.
 humidity_temperature_DEP: Humidity-temperature relationship on departure.
-humidity_temperature_ENR: Humidity-temperature relationship en-route.
+humidity_temperature_ENR: Humidity-temperature relationship during en-route phase.
 vertical_rate_airspeed_ARR: Vertical rate to airspeed ratio on arrival.
 vertical_rate_airspeed_DEP: Vertical rate to airspeed ratio on departure.
-vertical_rate_airspeed_ENR: Vertical rate to airspeed ratio en-route.
-altitude_groundspeed_ARR: Altitude to groundspeed ratio on arrival.
-altitude_groundspeed_DEP: Altitude to groundspeed ratio on departure.
-altitude_groundspeed_ENR: Altitude to groundspeed ratio en-route.
+vertical_rate_airspeed_ENR: Vertical rate to airspeed ratio during en-route phase.
+altitude_groundspeed_ARR: Altitude to ground speed ratio on arrival.
+altitude_groundspeed_DEP: Altitude to ground speed ratio on departure.
+altitude_groundspeed_ENR: Altitude to ground speed ratio during en-route phase.
 temperature_bins_ARR: Temperature bins on arrival.
 temperature_bins_DEP: Temperature bins on departure.
 humidity_bins_ARR: Humidity bins on arrival.
@@ -123,22 +177,22 @@ flight_duration_bins: Binned values for flight duration.
 flown_distance_bins: Binned values for flown distance.
 vertical_rate_airspeed_ratio_ARR: Vertical rate to airspeed ratio on arrival.
 vertical_rate_airspeed_ratio_DEP: Vertical rate to airspeed ratio on departure.
-vertical_rate_airspeed_ratio_ENR: Vertical rate to airspeed ratio en-route.
+vertical_rate_airspeed_ratio_ENR: Vertical rate to airspeed ratio during en-route phase.
 wind_distance_flown_distance_ARR: Wind-distance to flown-distance ratio on arrival.
 wind_distance_flown_distance_DEP: Wind-distance to flown-distance ratio on departure.
-wind_distance_flown_distance_ENR: Wind-distance to flown-distance ratio en-route.
-groundspeed_airspeed_ratio_ARR: Groundspeed to airspeed ratio on arrival.
-groundspeed_airspeed_ratio_DEP: Groundspeed to airspeed ratio on departure.
-groundspeed_airspeed_ratio_ENR: Groundspeed to airspeed ratio en-route.
+wind_distance_flown_distance_ENR: Wind-distance to flown-distance ratio during en-route phase.
+groundspeed_airspeed_ratio_ARR: Ground speed to airspeed ratio on arrival.
+groundspeed_airspeed_ratio_DEP: Ground speed to airspeed ratio on departure.
+groundspeed_airspeed_ratio_ENR: Ground speed to airspeed ratio during en-route phase.
 Manufacturer: Aircraft manufacturer.
 Model_FAA: FAA model code for the aircraft.
 Physical_Class_Engine: Engine classification.
 Num_Engines: Number of engines.
 Approach_Speed_knot: Approach speed in knots.
-FAA_Weight: Weight category by FAA.
-MTOW_kg: Maximum takeoff weight in kg.
-MALW_kg: Maximum landing weight in kg.
-mzfw_kg: Maximum zero-fuel weight in kg.
+FAA_Weight: FAA weight category.
+MTOW_kg: Maximum takeoff weight in kilograms.
+MALW_kg: Maximum allowable landing weight in kilograms.
+mzfw_kg: Maximum zero-fuel weight in kilograms.
 max_fuel_l: Maximum fuel capacity in liters.
 seats_typ: Typical seating configuration.
 cargo_capacity: Cargo capacity.
@@ -147,19 +201,19 @@ tas_knots: True airspeed in knots.
 wingspan_m: Wingspan in meters.
 length_m: Aircraft length in meters.
 height_m: Aircraft height in meters.
-oew_kg: Operating empty weight in kg.
+oew_kg: Operating empty weight in kilograms.
 seats_min: Minimum seating capacity.
 seats_max: Maximum seating capacity.
-Latitude_adep: Latitude of the departure airport.
-Longitude_adep: Longitude of the departure airport.
-Altitude_adep: Altitude of the departure airport.
-Latitude_ades: Latitude of the destination airport.
-Longitude_ades: Longitude of the destination airport.
-Altitude_ades: Altitude of the destination airport.
+Latitude_adep: Latitude of departure airport.
+Longitude_adep: Longitude of departure airport.
+Altitude_adep: Altitude of departure airport, in feet.
+Latitude_ades: Latitude of destination airport.
+Longitude_ades: Longitude of destination airport.
+Altitude_ades: Altitude of destination airport, in feet.
 actual_distance: Actual distance flown.
-altitude_difference: Altitude difference between departure and destination.
+altitude_difference: Altitude difference between departure and destination airports.
 bearing: Bearing angle for the flight path.
-elevation_gradient: Elevation gradient between departure and destination.
-adep_geo_cluster: Geographical cluster of the departure airport.
-ades_geo_cluster: Geographical cluster of the destination airport.
+elevation_gradient: Elevation gradient between departure and destination airports.
+adep_geo_cluster: Geographical cluster of departure airport.
+ades_geo_cluster: Geographical cluster of destination airport.
 tow: Actual takeoff weight.
