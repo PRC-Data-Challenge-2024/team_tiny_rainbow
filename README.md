@@ -90,7 +90,7 @@ The R code `get_traj_features4.R` was used for trajectory data processing. This 
 - `Challenge Data` with trajectory data parquets;
 - `processed` to save the processed files.
 
-The code reads the parquet files inside the `Challenge Data` folder and extracts some features for each flight ID, grouping all entries of each flight ID in a unique entry with all features extracted. Beyond the `.Rda` files generated in the folder 'processed' for each day with all flights starting on that day, it also generates the files below in the root folder:
+The code reads the parquet files inside the `Challenge Data` folder and extracts some features for each flight ID, grouping all entries of each flight ID in a unique entry with all features extracted. Beyond the `.Rda` files generated in the folder `processed` for each day with all flights starting on that day, it also generates the files below in the root folder:
 - `trajectory_features4.csv` with all flights from the parquets, by flight ID, with the extracted features;
 - `trajectory_features.Rda` R data file only with the flights in the challenge and (final) submission datasets, by flight ID, with the extracted features;
 - `trajectory_features.csv` also with only the flights in the challenge and (final) submission datasets, by flight ID, with the extracted features.
