@@ -52,14 +52,14 @@ You should run the scripts/notebooks on the following order:
 ## R Dependencies
 
 The R code for trajectory data processing was developed and tested under R version 4.4.1 with RStudio version 2024.09.0 build 375. The following dependencies are required:
-- 'tidyverse'
-- 'arrow'
-- 'geosphere'
-- 'airportr'
-- 'data.table'
-- 'REdaS'
+- `tidyverse`
+- `arrow`
+- `geosphere`
+- `airportr`
+- `data.table`
+- `REdaS`
 
-These dependencies can be installed with the command "install.packages('dependency_name')".
+These dependencies can be installed with the command `install.packages("dependency_name")`.
 
 ## Python Dependencies
 
@@ -86,16 +86,16 @@ Furthermore, a `requirements.txt` is also provided.
 
 ## Trajectory Data Processing
 
-The R code 'get_traj_features4.R' was used for trajectory data processing. This code extracts relevant features from trajectory data for each flight ID in the challenge and (final) submission sets. To run this code, it is necessary to put it in a folder with two subfolders inside: 
-- 'Challenge Data' with trajectory data parquets;
-- 'processed' to save the processed files.
+The R code `get_traj_features4.R` was used for trajectory data processing. This code extracts relevant features from trajectory data for each flight ID in the challenge and (final) submission sets. To run this code, it is necessary to put it in a folder with two subfolders inside: 
+- `Challenge Data` with trajectory data parquets;
+- `processed` to save the processed files.
 
-The code reads the parquet files inside the 'Challenge Data' folder and extracts some features for each flight ID, grouping all entries of each flight ID in a unique entry with all features extracted. Beyond the '.Rda' files generated in folder 'processed' for each day with all flights starting on that day, it also generates the files below:
-- 'trajectory_features4.csv' with all flights from the parquets, by flight ID, with the extracted features;
-- 'trajectory_features.Rda' R data file only with the flights in the challenge and (final) submission datasets, by flight ID, with the extracted features;
-- 'trajectory_features.csv' also with only the flights in the challenge and (final) submission datasets, by flight ID, with the extracted features.
+The code reads the parquet files inside the `Challenge Data` folder and extracts some features for each flight ID, grouping all entries of each flight ID in a unique entry with all features extracted. Beyond the `.Rda` files generated in the folder 'processed' for each day with all flights starting on that day, it also generates the files below in the root folder:
+- `trajectory_features4.csv` with all flights from the parquets, by flight ID, with the extracted features;
+- `trajectory_features.Rda` R data file only with the flights in the challenge and (final) submission datasets, by flight ID, with the extracted features;
+- `trajectory_features.csv` also with only the flights in the challenge and (final) submission datasets, by flight ID, with the extracted features.
 
-Therefore, the file employed in the following steps is 'trajectory_features.csv'.
+Therefore, the file employed in the following steps is `trajectory_features.csv`.
 
 ## Exploratory Data Analysis
 
