@@ -2,7 +2,7 @@
 
 # Description
 
-This repository contains the entry of `team_tiny_rainbow`, from Aeronautics Institute of Technology (ITA), to the Performance Review Commission (PRC) Data Challenge. The main objective of this challenge was to build an **open** Machine Learning (ML) model to accurately infer the Actual TakeOff Weight (ATOW) of a flown flight.
+This repository contains the solutions developed by `team_tiny_rainbow`, from Aeronautics Institute of Technology (ITA), for the Performance Review Commission (PRC) Data Challenge. The main objective of this challenge was to build an **open** Machine Learning (ML) model to accurately estimate the Actual TakeOff Weight (ATOW) of a flown flight.
 
 The following artefacts are present in this repository and will be shared publicly:
 - The source code used for data processing, feature engineering, and training the predictive models.
