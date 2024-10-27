@@ -1,4 +1,4 @@
-callsign: Aircraft identifier during the flight.
+callsign: Flight identifier.
 adep: Departure airport.
 ades: Destination airport.
 aircraft_type: Specific type or model of the aircraft.
@@ -8,38 +8,38 @@ taxiout_time: Time spent taxiing before takeoff.
 flown_distance: Total distance flown.
 track_variation_ARR_100: Track variation within 100 NM of arrival airport, in degrees.
 track_variation_DEP_40: Track variation within 40 NM of departure airport, in degrees.
-track_variation_ENR: Track variation during en-route phase, in degrees.
+track_variation_ENR: Track variation during en route phase, in degrees.
 average_vertical_rate_ARR_100: Average vertical speed within 100 NM of arrival airport, in ft/min.
 average_vertical_rate_DEP_40: Average vertical speed within 40 NM of departure airport, in ft/min.
-average_vertical_rate_ENR: Average vertical speed during en-route phase, in ft/min.
+average_vertical_rate_ENR: Average vertical speed during en route phase, in ft/min.
 average_airspeed_ARR_100: Average true airspeed within 100 NM of arrival airport, in m/s.
 average_airspeed_DEP_40: Average true airspeed within 40 NM of departure airport, in m/s.
-average_airspeed_ENR: Average true airspeed during en-route phase, in m/s.
+average_airspeed_ENR: Average true airspeed during en route phase, in m/s.
 groundspeed_ARR_100: Average ground speed within 100 NM of arrival airport, in knots.
 groundspeed_DEP_40: Average ground speed within 40 NM of departure airport, in knots.
-groundspeed_ENR: Average ground speed during en-route phase, in knots.
+groundspeed_ENR: Average ground speed during en route phase, in knots.
 wind_distance_ARR_100: Sum of tailwind/headwind speed times time within 100 NM of arrival airport, in meters.
 wind_distance_DEP_40: Sum of tailwind/headwind speed times time within 40 NM of departure airport, in meters.
-wind_distance_ENR: Sum of tailwind/headwind speed times time during en-route phase, in meters.
+wind_distance_ENR: Sum of tailwind/headwind speed times time during en route phase, in meters.
 average_temperature_ARR_100: Average temperature within 100 NM of arrival airport, in K.
 average_temperature_DEP_40: Average temperature within 40 NM of departure airport, in K.
-average_temperature_ENR: Average temperature during en-route phase, in K.
+average_temperature_ENR: Average temperature during en route phase, in K.
 average_humidity_ARR_100: Average humidity within 100 NM of arrival airport, in g/kg.
 average_humidity_DEP_40: Average humidity within 40 NM of departure airport, in g/kg.
-average_humidity_ENR: Average humidity during en-route phase, in g/kg.
+average_humidity_ENR: Average humidity during en route phase, in g/kg.
 specific_energy_ARR_100: Specific energy at last point within 100 NM of arrival airport (V² + gh).
 specific_energy_DEP_40: Specific energy at last point within 40 NM of departure airport (V² + gh).
-specific_energy_ENR: Specific energy at last point during en-route phase (V² + gh).
+specific_energy_ENR: Specific energy at last point during en route phase (V² + gh).
 flown_distance_ARR_100: Flown distance within 100 NM of arrival airport, in nautical miles.
 flown_distance_DEP_40: Flown distance within 40 NM of departure airport, in nautical miles.
-flown_distance_ENR: Flown distance during en-route phase, in nautical miles.
+flown_distance_ENR: Flown distance during en route phase, in nautical miles.
 average_altitude_ARR_100: Average altitude within 100 NM of arrival airport, in feet.
 average_altitude_DEP_40: Average altitude within 40 NM of departure airport, in feet.
-average_altitude_ENR: Average altitude during en-route phase, in feet.
+average_altitude_ENR: Average altitude during en route phase, in feet.
 max_altitude_ARR_100: Maximum altitude within 100 NM of arrival airport, in feet.
 max_altitude_DEP_40: Maximum altitude within 40 NM of departure airport, in feet.
-max_altitude_ENR: Maximum altitude during en-route phase, in feet.
-cruise_altitude_ENR: 99th percentile of altitude during en-route phase, in feet.
+max_altitude_ENR: Maximum altitude during en route phase, in feet.
+cruise_altitude_ENR: 99th percentile of altitude during en route phase, in feet.
 specific_energy: Specific energy at 10 NM flown (V² + gh).
 tas_10NM: True airspeed at 10 NM flown, in m/s.
 groundspeed_10NM: Ground speed at 10 NM flown, in knots.
@@ -107,10 +107,10 @@ specific_energy_7: 7th airborne observation of specific energy (V² + gh).
 specific_energy_8: 8th airborne observation of specific energy (V² + gh).
 specific_energy_9: 9th airborne observation of specific energy (V² + gh).
 specific_energy_10: 10th airborne observation of specific energy (V² + gh).
-kpi17_distance: Distance in level flight from takeoff to top of climb, in meters.
-flown_distance_kpi17: Total climb distance from takeoff to top of climb, in meters.
-kpi17_time: Time in level flight from takeoff to top of climb, in seconds.
-transit_time_kpi17: Total climb time from takeoff to top of climb, in seconds.
+kpi17_distance: Distance in level flight from takeoff to top-of-climb, in meters.
+flown_distance_kpi17: Total climb distance from takeoff to top-of-climb, in meters.
+kpi17_time: Time in level flight from takeoff to top-of-climb, in seconds.
+transit_time_kpi17: Total climb time from takeoff to top-of-climb, in seconds.
 offblock_hour: Hour of gate departure.
 offblock_minute: Minute of gate departure.
 offblock_day_of_week: Day of the week for gate departure.
@@ -157,16 +157,16 @@ airspeed_specific_energy_DEP: Airspeed-related specific energy on departure.
 airspeed_specific_energy_ENR: Airspeed-related specific energy during en-route phase.
 groundspeed_flown_distance_ARR: Flown distance related to ground speed on arrival.
 groundspeed_flown_distance_DEP: Flown distance related to ground speed on departure.
-groundspeed_flown_distance_ENR: Flown distance related to ground speed during en-route phase.
+groundspeed_flown_distance_ENR: Flown distance related to ground speed during en route phase.
 humidity_temperature_ARR: Humidity-temperature relationship on arrival.
 humidity_temperature_DEP: Humidity-temperature relationship on departure.
 humidity_temperature_ENR: Humidity-temperature relationship during en-route phase.
 vertical_rate_airspeed_ARR: Vertical rate to airspeed ratio on arrival.
 vertical_rate_airspeed_DEP: Vertical rate to airspeed ratio on departure.
-vertical_rate_airspeed_ENR: Vertical rate to airspeed ratio during en-route phase.
+vertical_rate_airspeed_ENR: Vertical rate to airspeed ratio during en route phase.
 altitude_groundspeed_ARR: Altitude to ground speed ratio on arrival.
 altitude_groundspeed_DEP: Altitude to ground speed ratio on departure.
-altitude_groundspeed_ENR: Altitude to ground speed ratio during en-route phase.
+altitude_groundspeed_ENR: Altitude to ground speed ratio during en route phase.
 temperature_bins_ARR: Temperature bins on arrival.
 temperature_bins_DEP: Temperature bins on departure.
 humidity_bins_ARR: Humidity bins on arrival.
@@ -177,13 +177,13 @@ flight_duration_bins: Binned values for flight duration.
 flown_distance_bins: Binned values for flown distance.
 vertical_rate_airspeed_ratio_ARR: Vertical rate to airspeed ratio on arrival.
 vertical_rate_airspeed_ratio_DEP: Vertical rate to airspeed ratio on departure.
-vertical_rate_airspeed_ratio_ENR: Vertical rate to airspeed ratio during en-route phase.
+vertical_rate_airspeed_ratio_ENR: Vertical rate to airspeed ratio during en route phase.
 wind_distance_flown_distance_ARR: Wind-distance to flown-distance ratio on arrival.
 wind_distance_flown_distance_DEP: Wind-distance to flown-distance ratio on departure.
 wind_distance_flown_distance_ENR: Wind-distance to flown-distance ratio during en-route phase.
 groundspeed_airspeed_ratio_ARR: Ground speed to airspeed ratio on arrival.
 groundspeed_airspeed_ratio_DEP: Ground speed to airspeed ratio on departure.
-groundspeed_airspeed_ratio_ENR: Ground speed to airspeed ratio during en-route phase.
+groundspeed_airspeed_ratio_ENR: Ground speed to airspeed ratio during en route phase.
 Manufacturer: Aircraft manufacturer.
 Model_FAA: FAA model code for the aircraft.
 Physical_Class_Engine: Engine classification.
