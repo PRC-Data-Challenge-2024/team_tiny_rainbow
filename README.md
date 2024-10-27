@@ -44,10 +44,8 @@ We could not keep these files on GitHub due to space limitations.
 
 You should run the scripts/notebooks on the following order:
 1. Trajectory Data Processing.
-2. Exploratory Data Analysis.
-3. Model Training (CatBoost, XGBoost, LightGBM, Neural Networks, or Ensemble).
-
-
+2. Feature Engineering.
+3. Model Training and Inference (CatBoost, XGBoost, LightGBM, Neural Networks, or Ensemble).
 
 ## R Dependencies
 
@@ -97,16 +95,18 @@ The code reads the parquet files inside the `Challenge Data` folder and extracts
 
 Therefore, the file employed in the following steps is `trajectory_features.csv`.
 
-## Exploratory Data Analysis
+## Feature Engineering
+
+Before running the scripts to train the learning models, you need to execute the notebook `feature_engineering.ipynb`, which generate the augmented datasets `challenge_set_updated.csv` and `submission_set_updated.csv`.
 
 ## CatBoost
 
-Before running any of CatBoost's files, `eda-v20.ipynb` needs to be run in order to generate the feature engineered dataset.
+Before running any of CatBoost's files, `feature_engineering.ipynb` needs to be run in order to generate the feature engineered dataset.
 
 The predictive model based on CatBoost involves the following files:
-- `catboost-v20.ipynb`: this is the main notebook for training and inference of the model based on CatBoost. It trains the model on the challenge set and generates the estimated ATOWs on the submission set.
-- `catboost-select-v20.ipynb`: uses the method `select_features()` from CatBoost to eliminate features that hurt the model's performance.
-- `catboost-optuna.py`: uses Optuna to optimize the CatBoost's hyperparameters.
+- `catboost.ipynb`: this is the main notebook for training and inference of the model based on CatBoost. It trains the model on the challenge set and generates the estimated ATOWs on the submission set.
+- `catboost_select.ipynb`: uses the method `select_features()` from CatBoost to eliminate features that hurt the model's performance.
+- `catboost_optuna.py`: uses Optuna to optimize the CatBoost's hyperparameters.
 
 ## XGBoost
 
@@ -114,15 +114,15 @@ Before running any of the XGBoost files, `xgboost_feature-engineering.ipynb` sho
 
 The predictive model based on XGBoost involves the following files:
 - `xgboost.ipynb`: This is the primary notebook for training and inference using the XGBoost model. It trains the model on the challenge set and generates the estimated ATOWs for the submission set.
-- `xgboost-optuna.py`: Uses Optuna to fine-tune XGBoost's hyperparameters, enhancing the model's accuracy and efficiency.
+- `xgboost_optuna.py`: Uses Optuna to fine-tune XGBoost's hyperparameters, enhancing the model's accuracy and efficiency.
 
 ## LightGBM
 
-Before running any of the LightGBM files, `eda-v20.ipynb` should be executed to generate the feature-engineered dataset. This dataset differs from others by including dummy variables, which helps LightGBM achieve better results by more effectively capturing categorical distinctions.
+Before running any of the LightGBM files, `feature_engineering.ipynb` should be executed to generate the feature-engineered dataset. This dataset differs from others by including dummy variables, which helps LightGBM achieve better results by more effectively capturing categorical distinctions.
 
 The predictive model based on LightGBM involves the following files:
 - `lightgbm.ipynb`: This is the primary notebook for training and inference using the LightGBM model. It trains the model on the challenge set and generates the estimated ATOWs for the submission set.
-- `lightgbm-optuna.py`: Uses Optuna to fine-tune XGBoost's hyperparameters, enhancing the model's accuracy and efficiency.
+- `lightgbm_optuna.py`: Uses Optuna to fine-tune XGBoost's hyperparameters, enhancing the model's accuracy and efficiency.
 
 ## Neural Networks
 
