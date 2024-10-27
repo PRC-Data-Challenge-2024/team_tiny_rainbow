@@ -7,7 +7,7 @@ This repository contains the entry of `team_tiny_rainbow`, from Aeronautics Inst
 The following artefacts are present in this repository and will be shared publicly:
 - The source code used for data processing, feature engineering, and training the predictive models.
 - A manuscript (`paper.pdf`) to be submitted to the Journal of Open Aviation Science, an open-access peer-reviewed journal. Moreover, we commit ourselves to publish a public pre-print as soon as the paper is submitted.
-- Complementary data used. We have limited ourselves to only information publicly available online. For more information, please refer to the attached manuscript.
+- Complementary data used. We have limited ourselves to only use information publicly available online. For more information, please refer to the attached manuscript.
 
 # Open Source Commitment
 
@@ -15,13 +15,13 @@ We are committed to go open on the outcome of this challenge!
 
 # Methodology
 
-This section gives an overview of the methodology we used to create our machine learning (ML) models. For more information, we strongly recommend seeing the attached manuscript `paper.pdf`, which is ready to be submitted to the Journal of Open Aviation Science (JOAS).
+This section provides an overview of the methodology we used to create our machine learning (ML) models. For more information, we strongly recommend reading the attached manuscript `paper.pdf`, which is ready to be submitted to the Journal of Open Aviation Science (JOAS).
 
 Our methodology involved preprocessing the data to generate features, which were then fed to supervised ML models. To improve our results, we have also devised the following extra databases (which can be found in the folder `extra_data`):
 - OpenFlights Airports Database.
 - Global Airport Database.
 - Federal Aviation Administration (FAA) Aircraft Database.
-- `aircraft_extra_v3.csv`: we created this database of extra aircraft features (i.e. not contained in the FAA database) from manually collecting them from public sources (Wikipedia, technical sheets, factory specifications, and Eurocontrol Data).
+- `aircraft_extra_v3.csv`: we created this database of extra aircraft features (i.e. not contained in the FAA database) by manually collecting them from public sources (Wikipedia, technical sheets, factory specifications, and Eurocontrol Data).
 
 The challenge initially provided "flight and trajectory" data for each flight. On top of these initial features, we added features from our complementary data, and engineered new derived features. This process was guided by our experience in Data Science and Aviation and extensive testing. Regarding the ML models, we used the following:
 - CatBoost.
@@ -31,11 +31,11 @@ The challenge initially provided "flight and trajectory" data for each flight. O
 - An ensemble of the previous models.
 
 The trajectory data processing was developed in R, while the feature engineering and the ML models were implemented in Python. To communicate between the different modules of the code, we use `.csv` files. In general, our code's pipeline follows these steps:
-1. **Trajectory data processing:** process the challenge's data (flight and trajectory data) and generates `trajectories_set.csv` with features for each flight.
+1. **Trajectory data processing:** processes the challenge's data (flight and trajectory data) and generates `trajectories_set.csv` with features for each flight.
 2. **Feature engineering**: uses the file generated in the previous step and executes feature engineering by adding complementary data and deriving new features. This generates an augmented dataset composed of `challenge_set_updated.csv` and `submission_set_updated.csv`.
 3. **Model training and inference**: uses the augmented dataset to train a particular predictive model and obtain the estimated ATOWs for the submission set.
 
-The full list of features after the feature engineering step can be seen at `feature_description.txt`.
+The full list of features obtained with the feature engineering step can be seen at `feature_description.txt`.
 
 # How to Run
 
