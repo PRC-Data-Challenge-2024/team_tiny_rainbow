@@ -5,8 +5,8 @@ import optuna
 
 # Load the dataset after the exploratory data analysis
 challenge_set_updated = pd.read_csv("../data/challenge_set_updated_v20.csv")
-submission_set = pd.read_csv("../data/final_submission_set.csv")
-submission_set_updated = pd.read_csv("../data/submission_set_updated_v20.csv")
+submission_set = pd.read_csv("../data/final_submission_set_v20.csv")
+submission_set_updated = pd.read_csv("../data/submission_set_updated.csv")
 
 dataset = pd.concat([challenge_set_updated, submission_set_updated], axis=0)
 
@@ -21,8 +21,7 @@ df = dataset.iloc[0:challenge_set_updated.shape[0], :]
 X = df.drop('tow', axis=1)
 y = df['tow']
 
-df.head()
-
+# Eliminating bad features (see catboost_select.ipynb)
 eliminated_features = ['groundspeed_airspeed_ratio_ENR', 'temperature_9', 'wind_distance_flown_distance_ENR', 'average_humidity_DEP_40', 'vertical_rate_bins_ARR', 
         'groundspeed_flown_distance_ARR', 'arrival_quarter', 'offblock_year', 'arrival_year', 'offblock_to_arrival_day_diff', 'altitude_9', 'tas_1', 
         'is_arrival_weekend', 'adep_height_6', 'sqrd_vlof_tas', 'average_airspeed_ARR_100', 'adep_height_7', 'wind_distance_ARR_100', 'altitude_4', 
