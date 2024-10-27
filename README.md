@@ -40,7 +40,7 @@ The trajectory data processing was developed in R, while the feature engineering
 To execute the code, you initially need to download the datasets from:
 https://drive.google.com/drive/folders/1PmEJ880V-0XKuOr-6kcoSqSErOnRBZ88?usp=sharing
 
-We could not keep these files on GitHub due to space limitations.
+Then, the files should be added to the `data` folder. We could not keep these files on GitHub due to space limitations.
 
 You should run the scripts/notebooks on the following order:
 1. Trajectory Data Processing.
